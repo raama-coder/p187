@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>Marker based AR Portfolio</title>
+
+  <!-- Import A-Frame and then AR.js -->
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+
+  <a-scene vr-mode-ui="enabled:false" embedded
+    arjs="sourceType:webcam; sourceWidth:1300; sourceHeight:900; displayWidth:1300; displayHeight:900; debugUIEnabled:false;">
+
+    <a-assets>
+      <img src="assets/fruitNinja.png" id="ninja">
+      <img src="assets/roadRunner.png" id="runner">
+      <img src="assets/train.png" id="train">
+    </a-assets>
+
+    <a-marker type="pattern" url="pattern-marker/FruitNinja/pattern-ninja.patt">
+      <a-plane src="#ninja" position="0 0 -1" width="2" , height="1.5" rotation="-90 0 0"></a-plane>
+    </a-marker>
+    <a-marker type="pattern" url="pattern-marker/RoadRunner/pattern-roadRunner.patt">
+      <a-plane src="#runner" position="0 0 -1" width="2" , height="1.5" rotation="-90 0 0"></a-plane>
+    </a-marker>
+    <a-marker type="pattern-marker/Train/train.patt">
+      <a-plane src="#train" position="0 0 -1" width="2" , height="1.5" rotation="-90 0 0"></a-plane>
+    </a-marker>
+
+  </a-scene>
+
+</body>
+
+</html>
